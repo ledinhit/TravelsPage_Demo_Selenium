@@ -5,16 +5,22 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPracticePage;
 
-public class LoginTest extends BaseTest {
-	LoginPracticePage loginPg;
+import pages.LoginTravelsPage;
 
+public class TravelsLoginTest extends BaseTest {
+	LoginTravelsPage loginPg;
+	/*
+	 * String mailAdmin = "admin@phptravels.com"; String passAdmin = "demoadmin";
+	 * String mailUser = "user@phptravels.com"; String passUser = "demouser";
+	 */
+
+// login Home page
 	@Test
 	public void loginWithCorrect() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94d@gmail.com", "123456");
-		String title = driver.getTitle();
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("user@phptravels.com", "demouser");
+		String title = driver.getCurrentUrl();
 		System.out.println("title web: " + title);
 		Assert.assertEquals(title, "My account - My Store");
 	}
@@ -22,8 +28,8 @@ public class LoginTest extends BaseTest {
 	@Test
 
 	public void loginWithEmailEmpty() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("", "123456");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("", "123456");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -33,8 +39,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithPassEmpty() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94d@gmail.com", "");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("ledinh.94d@gmail.com", "");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -44,8 +50,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithBlankField() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("", "");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("", "");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -54,8 +60,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithEmailInCorrect() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94@gmail.com", "123456");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("ledinh.94@gmail.com", "123456");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -64,8 +70,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithPassInCorrect() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94@gmail.com", "123456");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("ledinh.94@gmail.com", "123456");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -74,8 +80,8 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithEmailInvalid() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94gmail.com", "123456");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("ledinh.94gmail.com", "123456");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
@@ -85,11 +91,14 @@ public class LoginTest extends BaseTest {
 	@Test
 	// Pass Five characters minimum
 	public void LoginWithPassInvalid() {
-		loginPg = new LoginPracticePage(driver);
-		loginPg.Login("ledinh.94d@gmail.com", "1234");
+		loginPg = new LoginTravelsPage(driver);
+		loginPg.LoginHomePage("ledinh.94d@gmail.com", "1234");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String emailErrMes = driver.findElement(By.cssSelector(".alert>ol>li")).getText();
 		System.out.println("Email messenger error : " + emailErrMes);
 		Assert.assertEquals(emailErrMes, "Invalid password.");
 	}
+
+	// Login admin page
+
 }

@@ -5,6 +5,7 @@ public class Links {
 	public static final String DOMAIN = "https://www.phptravels.net/";
 	public static final String URL_LOGIN_FRONT_END = DOMAIN + "login";
 	public static final String URL_LOGIN_BACK_END = DOMAIN + "admin";
+	public static final String URL_ACCOUNT = DOMAIN + "account/";
 
 	// web http://automationpractice.com/index.php
 	public static final String URL = "http://automationpractice.com/index.php";
