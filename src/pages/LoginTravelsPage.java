@@ -20,7 +20,7 @@ public class LoginTravelsPage {
 	WebElement userEmail;
 	@FindBy(name = "password")
 	WebElement userPass;
-	@FindBy(name = "//button[contains(text(),'Login')]")
+	@FindBy(xpath = "//button[contains(text(),'Login')]")
 	WebElement btnHomeLogin;
 
 	// Admin page
@@ -28,16 +28,13 @@ public class LoginTravelsPage {
 	WebElement adminEmail;
 	@FindBy(name = "password")
 	WebElement adminPass;
-	@FindBy(name = "//span[contains(text(),'Login')]")
+	@FindBy(xpath = "//span[contains(text(),'Login')]")
 	WebElement btnAdminLogin;
-	/*
-	 * LoginPage: Nơi chứa các những gì thuộc về LoginPage ví như: các element,
-	 * function login.
-	 */
 
 	/*
-	 * Cái class này hàm khởi tạo Object (constructor) có 1 tham số chính là driver.
-	 * Nếu không có tham số này sẽ báo lỗi.
+	 * LoginPage: Nơi chứa các những gì thuộc về LoginPage ví như: các element,
+	 * function login. Cái class này hàm khởi tạo Object (constructor) có 1 tham số
+	 * chính là driver. Nếu không có tham số này sẽ báo lỗi.
 	 */
 	public LoginTravelsPage(WebDriver driver) {
 		this.driver = driver;

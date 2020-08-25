@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import utilities.Links;
 
-public class TravelsHomeBaseTest {
+public class HomeTravelsBaseTest {
 	String linkLogin = "Login";// xpath
 	String dropdown = "//div[@class='dropdown dropdown-login dropdown-tab']//a[@id='dropdownCurrency']";
 	WebDriver driver;

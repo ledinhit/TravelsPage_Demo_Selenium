@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 import utilities.Links;
 
-public class TravelsAdminBaseTest {
+public class AdminTravelsBaseTest {
 	WebDriver driver;
 
 	@BeforeMethod

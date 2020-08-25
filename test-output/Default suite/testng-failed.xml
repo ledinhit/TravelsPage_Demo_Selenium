@@ -5,9 +5,9 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="LoginWithEmailInCorrect"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
+          <include name="loginWithCorrect"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
