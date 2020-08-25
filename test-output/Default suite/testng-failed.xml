@@ -3,13 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="none">
   <test name="Default test(failed)" parallel="none">
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.LoginTravelsHomeTest">
         <methods>
+          <include name="LoginWithEmailInvalid"/>
           <include name="beforeMethod"/>
+          <include name="LoginWithPassInCorrect"/>
+          <include name="LoginWithEmailInCorrect"/>
+          <include name="loginWithPassEmpty"/>
+          <include name="LoginWithBlankField"/>
+          <include name="LoginWithEmailEmpty"/>
           <include name="afterMethod"/>
-          <include name="loginWithCorrect"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.LoginTravelsHomeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
