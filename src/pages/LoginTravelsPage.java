@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,4 +58,16 @@ public class LoginTravelsPage {
 
 	}
 
+	public String getHtml5ValidationMessage(WebElement element) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		return (String) jsExecutor.executeScript("return arguments[0].validationMessage;", element);
+	}
+
+	public String getHtml5MessEmail() {
+		return (String) getHtml5ValidationMessage(adminEmail);
+	}
+
+	public String getHtml5MessPass() {
+		return (String) getHtml5ValidationMessage(adminPass);
+	}
 }

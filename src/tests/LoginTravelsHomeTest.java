@@ -25,8 +25,7 @@ public class LoginTravelsHomeTest extends HomeTravelsBaseTest {
 		dashoardPg = new DashboardTravelsPage(driver);
 		loginPg.LoginHomePage("user@phptravels.com", "demouser");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		String url = driver.getCurrentUrl();
-		System.out.println("TC_01 Link url: " + url);
+		System.out.println("TC_01 Link url: " + driver.getCurrentUrl());
 		System.out.println("TC_01 Title: " + driver.getTitle());
 		// Assert.assertTrue(dashoardPg.isDisplayed());
 	}
